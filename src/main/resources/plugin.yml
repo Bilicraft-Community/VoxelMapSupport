@@ -1,0 +1,4 @@
+name: VoxelMapSupport
+version: '${project.version}'
+main: com.bilicraft.voxelmapsupport.VoxelMapSupport
+api-version: 1.13
