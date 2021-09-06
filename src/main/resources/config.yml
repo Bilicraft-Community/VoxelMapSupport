@@ -1,1 +1,10 @@
-name: Tram
+# 服务器名称
+# 用于 BungeeCord 下区分服务器，避免地图打架
+# 不需要请设为空字符串 ""
+server-name: Survival
+
+# 世界名称重映射表
+# 例如Survival_World可以映射为Survival_主世界
+# 非必须，除非有需要，否则保持默认即可
+name-mapping:
+  admin: 管理员世界

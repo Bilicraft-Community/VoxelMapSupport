@@ -25,9 +25,10 @@ public final class VoxelMapSupport extends JavaPlugin implements Listener, Plugi
     @Override
     public void onPluginMessageReceived(String channel, Player player, byte[] bytes) {
         if (channel.contentEquals("worldinfo:world_id")) {
-            String worldName = getConfig().getString("name")+"_"+player.getWorld().getName();
+
+            String worldName = getConfig().getString("server-name") + "_" + getConfig().getString("name-mapping." + player.getWorld().getName(), player.getWorld().getName());
             byte[] nameBytes = worldName.getBytes();
-            ByteBuffer buffer = ByteBuffer.allocate(2+nameBytes.length).put((byte)0).put((byte) nameBytes.length).put(nameBytes);
+            ByteBuffer buffer = ByteBuffer.allocate(2 + nameBytes.length).put((byte) 0).put((byte) nameBytes.length).put(nameBytes);
             player.sendPluginMessage(this, "worldinfo:world_id", buffer.array());
         }
     }
